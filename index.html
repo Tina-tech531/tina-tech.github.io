@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>域名出售 | zmtech.top</title>
-    <meta name="description" content="域名zmtech.top出售，售价5000元，联系邮箱tina@telide.com">
+    <title>Domain for Sale | 域名出售 - zmtech.top</title>
+    <meta name="description" content="Premium domain zmtech.top for sale | 优质域名 zmtech.top 出售">
     <style>
+        :root {
+            --primary-color: #4b6cb7;
+            --secondary-color: #e74c3c;
+            --text-color: #2c3e50;
+            --light-bg: #f5f7fa;
+        }
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f7fa;
+            background: var(--light-bg);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            color: #333;
+            color: var(--text-color);
         }
         .card {
             background: white;
@@ -23,26 +29,40 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             padding: 40px;
             text-align: center;
-            max-width: 480px;
+            max-width: 500px;
             width: 100%;
         }
         h1 {
-            color: #2c3e50;
-            margin-bottom: 15px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
             font-size: 1.8rem;
         }
         .domain {
             font-size: 2.2rem;
             font-weight: bold;
-            color: #4b6cb7;
+            color: var(--primary-color);
             margin: 15px 0;
             letter-spacing: 1px;
         }
+        .prices {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .price-box {
+            min-width: 120px;
+        }
         .price {
             font-size: 1.8rem;
-            color: #e74c3c;
             font-weight: bold;
-            margin: 20px 0;
+        }
+        .cny {
+            color: var(--secondary-color);
+        }
+        .usd {
+            color: #27ae60;
         }
         .contact {
             margin-top: 30px;
@@ -51,41 +71,82 @@
         }
         .email-link {
             display: inline-block;
-            background: #4b6cb7;
+            background: var(--primary-color);
             color: white;
             padding: 12px 25px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             margin-top: 15px;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
         .email-link:hover {
             background: #3a56a0;
+            transform: translateY(-2px);
+        }
+        .language-switch {
+            margin-top: 25px;
+            font-size: 0.9rem;
+        }
+        .language-switch a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
         .footer {
             margin-top: 30px;
             color: #7f8c8d;
             font-size: 0.9rem;
         }
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+            .domain {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>域名出售</h1>
+        <!-- 中英文标题切换 -->
+        <h1 id="title">域名出售 | Domain for Sale</h1>
+        
         <div class="domain">zmtech.top</div>
-        <div class="price">售价：¥5000</div>
+        
+        <!-- 双货币价格显示 -->
+        <div class="prices">
+            <div class="price-box">
+                <div class="price cny">¥5000</div>
+                <div>人民币</div>
+            </div>
+            <div class="price-box">
+                <div class="price usd">$670</div>
+                <div>USD</div>
+            </div>
+        </div>
         
         <div class="contact">
-            <p>有意购买请联系：</p>
-            <a href="mailto:tina@telide.com?subject=购买域名zmtech.top" class="email-link">
+            <p id="contact-text">联系购买 | Contact to Buy</p>
+            <a href="mailto:tina@telide.com?subject=Inquiry%20about%20zmtech.top" class="email-link">
                 tina@telide.com
             </a>
         </div>
         
         <div class="footer">
-            © 2024 zmtech.top 域名出售
+            © 2024 zmtech.top - All Rights Reserved
         </div>
     </div>
+
+    <script>
+        // 自动适配浏览器语言
+        if (navigator.language.startsWith('zh')) {
+            document.getElementById('title').innerHTML = '域名出售 | <small>Domain for Sale</small>';
+            document.getElementById('contact-text').innerHTML = '联系购买 | <small>Contact to Buy</small>';
+        } else {
+            document.getElementById('title').innerHTML = 'Domain for Sale | <small>域名出售</small>';
+            document.getElementById('contact-text').innerHTML = 'Contact to Buy | <small>联系购买</small>';
+        }
+    </script>
 </body>
 </html>
